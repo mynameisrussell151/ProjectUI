@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Circle?>
+
+<HBox alignment="CENTER" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #6e6e6e;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Controller">
+   <children>
+      <Circle fx:id="circle1" fill="#6f6f6f" radius="10.0" stroke="#cc52a6" strokeType="INSIDE" strokeWidth="6.0">
+         <HBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </HBox.margin></Circle>
+       <Circle fx:id="circle2" fill="#6f6f6f" radius="10.0" stroke="#2ad35a" strokeType="INSIDE" strokeWidth="6.0">
+         <HBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </HBox.margin></Circle>
+       <Circle fx:id="circle3" fill="#6f6f6f" radius="10.0" stroke="#3cb5d3" strokeType="INSIDE" strokeWidth="6.0">
+         <HBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </HBox.margin></Circle>
+   </children>
+</HBox>

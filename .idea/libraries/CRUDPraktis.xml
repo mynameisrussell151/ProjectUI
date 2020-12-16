@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="CRUDPraktis">
+    <ANNOTATIONS>
+      <root url="jar://$PROJECT_DIR$/../CRUDPraktis/out/artifacts/CRUDPraktis_jar/CRUDPraktis.jar!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../CRUDPraktis/out/artifacts/CRUDPraktis_jar/CRUDPraktis.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
