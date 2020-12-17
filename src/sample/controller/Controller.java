@@ -221,6 +221,7 @@ public class Controller {
                 emailAddToDoAppText = emailAddToDoApp.getText();
                 passwordToDoAppText = passwordToDoApp.getText();
                 passwordToDoAppText2 = passwordToDoApp2.getText();
+<<<<<<< HEAD
 
 
 //        Convert na sa GSON para isend na sa API
@@ -270,6 +271,57 @@ public class Controller {
                 }
             }
 
+=======
+            }
+
+//        Convert na sa GSON para isend na sa API
+            Gson gson = new Gson();
+            FormFields formFields = new FormFields(nameToDoAppText, emailAddToDoAppText, passwordToDoAppText, passwordToDoAppText2);
+            String x = gson.toJson(formFields);
+
+
+//        Establish HTTP Connection
+            PostRequest postRequest = new PostRequest("http://d1fb2ed90ffc.ngrok.io/api/auth/register", x);
+            postRequest.executePostRequest();
+            String response = postRequest.getPostRequestResponse();
+            int responseCode = postRequest.getmHttpURLConnection().getResponseCode();
+            postRequest.setCode(responseCode);
+            if (responseCode == 400) {
+                signFailedAlert400();
+            } else if (responseCode == 500) {
+                signFailedAlert500();
+            } else if (responseCode == 404) {
+                signFailedAlert404();
+            } else if (responseCode == 502) {
+                signFailedAlert502();
+            } else if (responseCode == 503) {
+                signFailedAlert503();
+            } else if (responseCode == 504) {
+                signFailedAlert504();
+            } else {
+                System.out.println(postRequest.getCode());
+                System.out.println(postRequest.getmHttpURLConnection().getResponseCode());
+                System.out.println(response);
+                postRequest.disconnect();
+                signUpSuccessAlert();
+
+                //Pag successfull ung signUp balik sa app
+                try {
+                    Parent root2 = FXMLLoader.load(getClass().getResource("../ui/login/loginUI.fxml"));
+                    Scene scene = new Scene(root2);
+                    Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    app_stage.setScene(scene);
+                    app_stage.show();
+
+
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+
+            }
+
+
+>>>>>>> d72a1348f6e16e8d508d989d6a3d1353e6360a51
         }
     }
 
