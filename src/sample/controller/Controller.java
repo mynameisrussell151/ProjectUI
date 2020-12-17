@@ -440,6 +440,26 @@ public class Controller {
 
 
 
+    /* ATM Section */
+    @FXML
+    public void onButtonClickATM(ActionEvent event) {
+        try {
+            Parent root1 = FXMLLoader.load(getClass().getResource("../ui/atm/atmUI.fxml"));
+            Stage stage = new Stage();
+            Image image = new Image(getClass().getResourceAsStream("../images/atm.png"));
+            stage.getIcons().add(image);
+            stage.setTitle("ApocaBank App");
+            stage.setScene(new Scene(root1, 1200, 600));
+            stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+
+
+
 
     // Loading Effects Initialization
 //    @FXML

@@ -1,0 +1,26 @@
+.parent {
+-fx-radius: 30px;
+-fx-background-color: #FFFFFF;
+}
+
+.sidebar {
+-fx-radius: 30px 30px 0px 0px;
+-fx-background-color: #FFFFFF;
+}
+
+.sidebar_opt {
+-fx-fill: linear-gradient(to bottom, #72beaa, #66beb2, #5abdbb, #4fbcc4, #46bbcd, #39b6d6, #38afdd, #45a8e2, #6199e2, #8288d9, #a075c7, #b75fac);
+}
+
+.cursor_hand{
+-fx-cursor: hand;
+
+}
+
+.monthly {
+-fx-background-color: transparent;
+-fx-border-style: dashed;
+-fx-border-radius: 5px;
+-fx-background-radius: 5px;
+-fx-border-color: #C1C1C1;
+}

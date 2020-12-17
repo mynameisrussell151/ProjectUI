@@ -474,7 +474,7 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="84.0" style="-fx-background-color: #0fbcf9; -fx-background-radius: 0px; -fx-font-family: Quicksand; -fx-font-weight: bold; -fx-text-fill: white;" styleClass="cursor_hand" stylesheets="@../css/StyleDesign.css" text="Run">
+                              <Button mnemonicParsing="false" onAction="#onButtonClickATM" prefHeight="59.0" prefWidth="84.0" style="-fx-background-color: #0fbcf9; -fx-background-radius: 0px; -fx-font-family: Quicksand; -fx-font-weight: bold; -fx-text-fill: white;" styleClass="cursor_hand" stylesheets="@../css/StyleDesign.css" text="Run">
                                  <font>
                                     <Font size="2.0" />
                                  </font>

@@ -1,14 +1,280 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.ui.atm.AtmUI"
-            prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" fx:controller="sample.controller.Controller" prefWidth="1024.0" styleClass="parent" stylesheets="@../../css/StyleDesignATM.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <AnchorPane prefHeight="600.0" prefWidth="57.0" BorderPane.alignment="CENTER">
+         <children>
+            <FontAwesomeIconView glyphName="BARS" layoutX="21.0" layoutY="29.0" size="1.5em" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="20.571428298950195" AnchorPane.topAnchor="22.0" />
+            <VBox layoutX="18.0" layoutY="233.0">
+               <children>
+                  <FontAwesomeIconView glyphName="HOME" size="1.5em">
+                     <styleClass>
+                        <String fx:value="sidebar_opt" />
+                        <String fx:value="cursor_hand" />
+                     </styleClass>
+                  </FontAwesomeIconView>
+                  <FontAwesomeIconView glyphName="CREDIT_CARD" size="1.5em">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="sidebar_opt" />
+                        <String fx:value="cursor_hand" />
+                     </styleClass>
+                  </FontAwesomeIconView>
+                  <FontAwesomeIconView glyphName="ADDRESS_CARD" size="1.5em">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="sidebar_opt" />
+                        <String fx:value="cursor_hand" />
+                     </styleClass>
+                  </FontAwesomeIconView>
+                  <Separator>
+                     <VBox.margin>
+                        <Insets bottom="15.0" top="15.0" />
+                     </VBox.margin>
+                  </Separator>
+               </children>
+            </VBox>
+            <FontAwesomeIconView glyphName="COG" layoutX="18.0" layoutY="587.0" size="1.5em" styleClass="cursor_hand" />
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" style="-fx-background-color: #F3F3F3;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="35.0" prefHeight="250.0" prefWidth="850.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #C1C1C1; -fx-background-radius: 30px 0px 30px 0px; -fx-border-radius: 30px 0px 30px 0px;" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label text="Dashboard" textFill="#34bbcd">
+                           <font>
+                              <Font name="Segoe UI Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Separator orientation="VERTICAL">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </Separator>
+                        <Label layoutX="25.0" layoutY="25.0" text="Hola! Bienvenido" textFill="#2e3536">
+                           <font>
+                              <Font name="Segoe UI Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="128.0" layoutY="25.0" maxWidth="1.7976931348623157E308" text="20:77 30 Feb " textFill="#2e3536" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Segoe UI Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="30.0" top="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <VBox HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="My Cards" textFill="#2e3536">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <HBox>
+                                 <children>
+                                    <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: transparent; -fx-border-color: #C1C1C1; -fx-border-style: dashed; -fx-border-radius: 5px; -fx-background-radius: 5px;">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="#c1c1c1" glyphName="PLUS" size="2em" />
+                                       </graphic>
+                                    </Button>
+                                    <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="250.0" style="-fx-background-radius: 10px; -fx-background-color: linear-gradient(to right, #6d7a74, #417776, #007189, #0065a1, #0051ab, #004cac, #0046ad, #0040ad, #0050b1, #005eb2, #1c6bb1, #3877af);;">
+                                       <HBox.margin>
+                                          <Insets left="15.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <Label text="ApocaBank" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                             <font>
+                                                <Font name="Segoe UI Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <FontAwesomeIconView glyphName="CC_VISA" layoutX="212.0" layoutY="142.0" size="1.5em" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="14.85714340209961">
+                                             <fill>
+                                                <LinearGradient endX="1.0" endY="1.0">
+                                                   <stops>
+                                                      <Stop color="WHITE" />
+                                                      <Stop color="WHITE" offset="1.0" />
+                                                   </stops>
+                                                </LinearGradient>
+                                             </fill>
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </FontAwesomeIconView>
+                                          <Label layoutX="20.0" layoutY="88.0" text="₱20.00" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="80.0">
+                                             <font>
+                                                <Font name="Segoe UI Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="20.0" layoutY="112.0" text="**** **** **** 4598" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="112.0">
+                                             <font>
+                                                <Font name="Segoe UI Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="100.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="250.0" style="-fx-background-radius: 10px; -fx-background-color: linear-gradient(to right, #e04e87, #df4577, #dc3c66, #d83555, #d33044, #d02548, #cd174b, #c9004f, #bf006a, #ac0184, #8c249c, #5c38af);;">
+                                       <children>
+                                          <Label text="ApocaBank Platinum" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                             <font>
+                                                <Font name="Segoe UI Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="CC_PAYPAL" layoutX="212.0" layoutY="142.0" selectionFill="#17c23b" size="1.5em" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="14.85714340209961">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </FontAwesomeIconView>
+                                          <Label layoutX="20.0" layoutY="88.0" text="₱0.00" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="80.0">
+                                             <font>
+                                                <Font name="Segoe UI Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="20.0" layoutY="112.0" text="**** **** **** 0000" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="112.0">
+                                             <font>
+                                                <Font name="Segoe UI Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets left="15.0" />
+                                       </HBox.margin>
+                                    </AnchorPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="15.0" top="15.0" />
+                           </padding>
+                        </VBox>
+                        <Separator maxHeight="1.7976931348623157E308" minHeight="-Infinity" orientation="VERTICAL">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </Separator>
+                        <VBox prefWidth="150.0" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets top="15.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <AnchorPane layoutX="40.0" layoutY="290.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="290.0">
+               <children>
+                  <Label layoutX="15.0" layoutY="15.0" text="Monthly Summary" textFill="#34bbcd" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+                     <font>
+                        <Font name="Segoe UI Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#2696c3" glyphName="CALENDAR" />
+                     </graphic>
+                  </Label>
+                  <VBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="50.0" prefHeight="200.0" prefWidth="235.0" styleClass="monthly" stylesheets="@../../css/StyleDesignATM.css">
+                     <children>
+                        <Label text="Total Withdraw Amount" textFill="#35cc65">
+                           <font>
+                              <Font name="Segoe UI Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="₱20000.00">
+                           <font>
+                              <Font name="Segoe UI Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Separator prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets bottom="15.0" top="15.0" />
+                           </VBox.margin>
+                        </Separator>
+                        <Label layoutX="31.0" layoutY="31.0" text="Total Deposit Amount">
+                           <font>
+                              <Font name="Segoe UI Bold" size="15.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="0.5761904761904761" endY="0.4809523809523809" startX="0.5476190476190477">
+                                 <stops>
+                                    <Stop color="#da1017" />
+                                    <Stop color="#6b4b4b" offset="0.6185567010309279" />
+                                    <Stop color="#ff6161" offset="0.7216494845360825" />
+                                    <Stop color="#ff6161" offset="0.9312714776632302" />
+                                    <Stop color="#ff6161" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                        <Label layoutX="31.0" layoutY="50.0" text="₱20.00">
+                           <font>
+                              <Font name="Segoe UI Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+                  <VBox layoutX="270.0" layoutY="50.0" prefHeight="200.0" prefWidth="409.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Report" textFill="#505051">
+                           <font>
+                              <Font name="Segoe UI Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="#49ba79" glyphName="BAR_CHART" />
+                           </graphic>
+                        </Label>
+                        <BarChart>
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <Label alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" text="16 Apr 2077" textFill="#464646">
+                           <font>
+                              <Font name="Segoe UI Bold" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
