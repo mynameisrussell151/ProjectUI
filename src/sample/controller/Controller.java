@@ -44,7 +44,7 @@ public class Controller {
 
     //Calculator
     @FXML
-    private long input1, input2;
+    private double input1;
 
     @FXML
     private String operator = "";
@@ -54,6 +54,46 @@ public class Controller {
 
     @FXML
     private Label output;
+
+    //ATM
+    @FXML
+    private TextField nameBank;
+
+    @FXML
+    private TextField usernameBank;
+
+    @FXML
+    private TextField passwordBank;
+
+    @FXML
+    private TextField passwordBank2;
+
+    @FXML
+    private TextField addressBank;
+
+    @FXML
+    private TextField cardNumberBank;
+
+    @FXML
+    private TextField depositAmount;
+
+    @FXML
+    private Label nameLabelBank;
+
+    @FXML
+    private Label ageLabelBank;
+
+    @FXML
+    private Label addressLabelBank;
+
+    @FXML
+    private Label emailAddLabelBank;
+
+    @FXML
+    private Label passwordLabelBank;
+
+    @FXML
+    private Label passwordLabelBank2;
 
 
     /* Todo App Section */
@@ -361,6 +401,34 @@ public class Controller {
     }
 
     @FXML
+    public void lightMode(ActionEvent event) {
+
+        try {
+            Parent root2 = FXMLLoader.load(getClass().getResource("../ui/calculator/calculatorUILightMode.fxml"));
+            Scene scene = new Scene(root2);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(scene);
+            app_stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    public void lightModeSwitch(ActionEvent event) {
+
+        try {
+            Parent root2 = FXMLLoader.load(getClass().getResource("../ui/calculator/calculatorUI.fxml"));
+            Scene scene = new Scene(root2);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(scene);
+            app_stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
     private void clearCalculator(ActionEvent event) {
         output.setText("0");
         isEmpty = true;
@@ -388,7 +456,7 @@ public class Controller {
                 return;
             }
             operator = val;
-            input1 = Long.parseLong(output.getText());
+            input1 = Double.parseDouble(output.getText());
             output.setText("");
         } else {
             if (operator.isEmpty()) {
@@ -400,14 +468,14 @@ public class Controller {
                 isEmpty = true;
                 return;
             }
-            output.setText(operation(input1, Long.parseLong(output.getText()), operator));
+            output.setText(operation(input1, Double.parseDouble(output.getText()), operator));
             operator = "";
             isEmpty = true;
         }
     }
 
     @FXML
-    private String operation(long input1, long input2, String operator) {
+    private String operation(double input1, double input2, String operator) {
         switch (operator) {
             case "+":
                 return String.valueOf(input1 + input2);
@@ -444,12 +512,12 @@ public class Controller {
     @FXML
     public void onButtonClickATM(ActionEvent event) {
         try {
-            Parent root1 = FXMLLoader.load(getClass().getResource("../ui/atm/atmUI.fxml"));
+            Parent root1 = FXMLLoader.load(getClass().getResource("../ui/login/atmUILogin.fxml"));
             Stage stage = new Stage();
             Image image = new Image(getClass().getResourceAsStream("../images/atm.png"));
             stage.getIcons().add(image);
             stage.setTitle("ApocaBank App");
-            stage.setScene(new Scene(root1, 1200, 600));
+            stage.setScene(new Scene(root1, 900, 690));
             stage.show();
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -457,8 +525,24 @@ public class Controller {
     }
 
 
+    @FXML
+    public void signUpBank(ActionEvent event) {
+        try {
+            Parent root2 = FXMLLoader.load(getClass().getResource("../ui/form/atmFormUI.fxml"));
+            Scene scene = new Scene(root2);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(scene);
+            app_stage.show();
 
 
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    public void loginBank(ActionEvent event) {
+    }
 
 
     // Loading Effects Initialization
