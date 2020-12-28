@@ -19,4 +19,8 @@ public class FormFieldsATM {
         this.password2 = password2;
     }
 
+    public FormFieldsATM(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 }

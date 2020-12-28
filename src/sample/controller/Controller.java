@@ -93,6 +93,18 @@ public class Controller {
     @FXML
     private Label passwordLabelBank2;
 
+    @FXML
+    private TextField usernameBankLogin;
+
+    @FXML
+    private TextField passwordBankLogin;
+
+    @FXML
+    private Label passwordBankLabelLogin;
+
+    @FXML
+    private Label emailAddBankLabelLogin;
+
 
     /* Todo App Section */
     @FXML
@@ -177,6 +189,16 @@ public class Controller {
         x.setTitle("Login Failed!");
         x.setContentText(alerts.getFailed404());
         x.setHeaderText("HTTP ERROR 404 - PAGE NOT FOUND");
+        x.showAndWait();
+
+    }
+
+    public void signFailedAlert405() {
+        Alert x = new Alert(Alert.AlertType.ERROR);
+        Alerts alerts = new Alerts();
+        x.setTitle("Login Failed!");
+        x.setContentText(alerts.getFailed405());
+        x.setHeaderText(null);
         x.showAndWait();
 
     }
@@ -310,7 +332,6 @@ public class Controller {
 
         }
     }
-
 
 
     @FXML
@@ -503,9 +524,6 @@ public class Controller {
     /* Tic - Toc - Toe Section */
 
 
-
-
-
     /* ATM Section */
     @FXML
     public void onButtonClickATM(ActionEvent event) {
@@ -538,6 +556,7 @@ public class Controller {
         }
 
     }
+
 
     @FXML
     public void signUpATM(ActionEvent event) throws IOException {
@@ -629,7 +648,68 @@ public class Controller {
         }
     }
 
-    public void loginBank(ActionEvent event) {
+    public void loginBank(ActionEvent event) throws IOException {
+        String usernameBankTextLogin = null;
+        String passwordBankTextLogin = null;
+        boolean username = ATMValidation.textFieldIsNull(usernameBankLogin, emailAddBankLabelLogin, "Required field!");
+        boolean password = ATMValidation.textFieldIsNull(passwordBankLogin, passwordBankLabelLogin, "Invalid password");
+
+        if (username || password) {
+            System.out.println("Please fill in the blanks and follow the required format");
+        } else {
+
+            usernameBankTextLogin = usernameBankLogin.getText();
+            passwordBankTextLogin = passwordBankLogin.getText();
+
+            Gson gson = new Gson();
+            FormFieldsATM formFields = new FormFieldsATM(usernameBankTextLogin, passwordBankTextLogin);
+            String x = gson.toJson(formFields);
+
+
+            //        Establish HTTP Connection
+            PostRequest postRequest = new PostRequest("http://localhost:8080/getATMUser", x);
+            postRequest.executePostRequest();
+            String response = postRequest.getPostRequestResponse();
+            int responseCode = postRequest.getmHttpURLConnection().getResponseCode();
+            postRequest.setCode(responseCode);
+            if (responseCode == 400) {
+                signFailedAlert400Login();
+            } else if (responseCode == 401) {
+                signFailedAlert401();
+            } else if (responseCode == 404) {
+                signFailedAlert404();
+            } else if (responseCode == 405) {
+                signFailedAlert405();
+            } else if (responseCode == 500) {
+                signFailedAlert500();
+            } else if (responseCode == 502) {
+                signFailedAlert502();
+            } else if (responseCode == 503) {
+                signFailedAlert503();
+            } else {
+                System.out.println(postRequest.getCode());
+                System.out.println(postRequest.getmHttpURLConnection().getResponseCode());
+                System.out.println(response);
+                postRequest.disconnect();
+                loginSuccessAlert();
+
+                //Pag successfull ung signUp balik sa app
+                try {
+                    Parent root2 = FXMLLoader.load(getClass().getResource("../ui/atm/atmUI.fxml"));
+                    Scene scene = new Scene(root2);
+                    Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    app_stage.setScene(scene);
+                    app_stage.show();
+
+
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+
+                //New dashboard
+            }
+
+        }
     }
 
 

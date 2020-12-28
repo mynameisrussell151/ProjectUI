@@ -31,6 +31,10 @@ public class Alerts {
         return "The page might have been removed or is temporarily available";
     }
 
+    public String getFailed405() {
+        return "Method not allowed";
+    }
+
     public String getFailed500() {
         return "The server encountered an internal error or misconfiguration and was unable to complete your request";
     }

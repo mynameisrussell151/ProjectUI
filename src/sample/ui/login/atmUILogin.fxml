@@ -27,9 +27,9 @@
       <AnchorPane prefHeight="500.0" prefWidth="415.0" BorderPane.alignment="CENTER">
          <children>
             <TextField fx:id="usernameBankLogin" layoutX="114.0" layoutY="121.0" promptText="Username" style="-fx-border-width: 0px 0px 1.5px 0px; -fx-background-color: transparent; -fx-border-color: linear-gradient(to left, #4aac36, #22af5d, #00b17d, #00b197, #00b0aa, #00adbb, #00a9ca, #00a4d4, #279ae0, #598de4, #877bdd, #af65c9);;" />
-            <Label fx:id="emailAddLabelLogin" layoutX="114.0" layoutY="148.0" textFill="#930a0a" />
+            <Label fx:id="emailAddBankLabelLogin" layoutX="114.0" layoutY="148.0" textFill="#930a0a" />
             <PasswordField fx:id="passwordBankLogin" layoutX="114.0" layoutY="190.0" promptText="Password" style="-fx-border-width: 0px 0px 1.5px 0px; -fx-border-color: linear-gradient(to left, #4aac36, #22af5d, #00b17d, #00b197, #00b0aa, #00adbb, #00a9ca, #00a4d4, #279ae0, #598de4, #877bdd, #af65c9);; -fx-background-color: transparent;" />
-            <Label fx:id="passwordLabelLogin" layoutX="116.0" layoutY="218.0" textFill="#930a0a" />
+            <Label fx:id="passwordBankLabelLogin" layoutX="116.0" layoutY="218.0" textFill="#930a0a" />
             <FontAwesomeIconView fill="#13b5e9" glyphName="USER" layoutX="84.0" layoutY="144.0" size="20" />
             <FontAwesomeIconView fill="#13b5e9" glyphName="LOCK" layoutX="85.0" layoutY="215.0" size="20" />
             <Button layoutX="130.0" layoutY="253.0" mnemonicParsing="false" onAction="#loginBank" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #13b5e9;" styleClass="cursor_hand" stylesheets="@../../css/StyleDesign.css" text="Login" textFill="WHITE" />
