@@ -15,7 +15,7 @@
       <AnchorPane prefHeight="500.0" prefWidth="350.0" style="-fx-background-color: linear-gradient(to right top, #d16ba5, #b87fca, #9193e2, #60a6ec, #2eb4e6, #32abd5, #38a1c3, #3d98b3, #457a96, #455d76, #3d4354, #2d2c34);;" BorderPane.alignment="CENTER">
          <children>
             <FontAwesomeIconView fill="WHITE" glyphName="BANK" layoutX="143.0" layoutY="162.0" selectionStart="0" size="70" />
-            <Text fill="WHITE" layoutX="123.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apocabank">
+            <Text fill="WHITE" layoutX="123.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ApocaBank">
                <font>
                   <Font size="26.0" />
                </font>

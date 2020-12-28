@@ -18,9 +18,7 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.fxml.Initializable;
 import javafx.util.Duration;
-import sample.validation.Alerts;
-import sample.validation.FormFields;
-import sample.validation.ToDoAppValidation;
+import sample.validation.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -75,13 +73,13 @@ public class Controller {
     private TextField cardNumberBank;
 
     @FXML
-    private TextField depositAmount;
+    private TextField emailAddressBank;
 
     @FXML
     private Label nameLabelBank;
 
     @FXML
-    private Label ageLabelBank;
+    private Label usernameLabelBank;
 
     @FXML
     private Label addressLabelBank;
@@ -539,6 +537,96 @@ public class Controller {
             System.out.println(e.getMessage());
         }
 
+    }
+
+    @FXML
+    public void signUpATM(ActionEvent event) throws IOException {
+        int repeat = 0;
+        String nameATMText;
+        String usernameATMText;
+        String addressATMText;
+        String cardNumberATMText;
+        String emailAddressATMText;
+        String passwordATMText;
+        String passwordATMText2;
+
+
+        boolean name = ATMValidation.textFieldIsNull(nameBank, nameLabelBank, "Required field!");
+        boolean alphabetName = ATMValidation.textAlphabet(nameBank, nameLabelBank, "Please only enter letters from a - z only");
+
+        boolean username = ATMValidation.textFieldIsNull(usernameBank, usernameLabelBank, "Required field!");
+        boolean address = ATMValidation.textFieldIsNull(addressBank, addressLabelBank, "Required field!");
+
+
+        boolean emailAdd = ATMValidation.textFieldIsNull(emailAddressBank, emailAddLabelBank, "Required field!");
+        boolean emailValidation = ATMValidation.emailFormat(emailAddressBank, emailAddLabelBank, "Format must be name@emailaddress.com");
+
+        boolean password = ATMValidation.textFieldIsNull(passwordBank, passwordLabelBank, "Required field!");
+        boolean password2 = ATMValidation.textFieldIsNull(passwordBank2, passwordLabelBank2, "Required field!");
+        boolean passwordMatcher = ATMValidation.isPasswordNotMatch(passwordBank, passwordBank2, passwordLabelBank2, "Password does not match");
+
+
+        if (name || username || address || emailAdd || password || password2) {
+            System.out.println("Please fill in the blanks and follow the required format");
+        } else {
+            if (alphabetName && emailValidation && passwordMatcher) {
+                nameATMText = nameBank.getText();
+                usernameATMText = usernameBank.getText();
+                addressATMText = addressBank.getText();
+                cardNumberATMText = cardNumberBank.getText();
+                emailAddressATMText = emailAddressBank.getText();
+                passwordATMText = passwordBank.getText();
+                passwordATMText2 = passwordBank2.getText();
+
+
+//        Convert na sa GSON para isend na sa API
+                Gson gson = new Gson();
+                FormFieldsATM formFields = new FormFieldsATM(nameATMText, usernameATMText, addressATMText, cardNumberATMText, emailAddressATMText, passwordATMText, passwordATMText2);
+                String x = gson.toJson(formFields);
+
+
+//        Establish HTTP Connection
+                PostRequest postRequest = new PostRequest("http://localhost:8080/saveATMUser", x);
+                postRequest.executePostRequest();
+                String response = postRequest.getPostRequestResponse();
+                int responseCode = postRequest.getmHttpURLConnection().getResponseCode();
+                postRequest.setCode(responseCode);
+                if (responseCode == 400) {
+                    signFailedAlert400();
+                } else if (responseCode == 500) {
+                    signFailedAlert500();
+                } else if (responseCode == 404) {
+                    signFailedAlert404();
+                } else if (responseCode == 502) {
+                    signFailedAlert502();
+                } else if (responseCode == 503) {
+                    signFailedAlert503();
+                } else if (responseCode == 504) {
+                    signFailedAlert504();
+                } else {
+                    System.out.println(postRequest.getCode());
+                    System.out.println(postRequest.getmHttpURLConnection().getResponseCode());
+                    System.out.println(response);
+                    postRequest.disconnect();
+                    signUpSuccessAlert();
+
+                    //Pag successfull ung signUp balik sa app
+                    try {
+                        Parent root2 = FXMLLoader.load(getClass().getResource("../ui/login/atmUILogin.fxml"));
+                        Scene scene = new Scene(root2);
+                        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        app_stage.setScene(scene);
+                        app_stage.show();
+
+
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+
+                }
+            }
+
+        }
     }
 
     public void loginBank(ActionEvent event) {

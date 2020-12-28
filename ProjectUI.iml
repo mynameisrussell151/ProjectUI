@@ -13,5 +13,6 @@
     <orderEntry type="library" name="fontawesome" level="project" />
     <orderEntry type="library" name="io.github.typhon0:AnimateFX:1.2.1" level="project" />
     <orderEntry type="library" name="CRUDPraktis" level="project" />
+    <orderEntry type="library" name="demo" level="project" />
   </component>
 </module>
