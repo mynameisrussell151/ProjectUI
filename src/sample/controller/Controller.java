@@ -106,6 +106,37 @@ public class Controller {
     private Label emailAddBankLabelLogin;
 
 
+    //Main UI
+    @FXML
+    public void lightModeMain(ActionEvent event) {
+
+        try {
+            Parent root2 = FXMLLoader.load(getClass().getResource("../ui/uiDarkMode.fxml"));
+            Scene scene = new Scene(root2);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(scene);
+            app_stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    public void lightModeSwitchMain(ActionEvent event) {
+
+        try {
+            Parent root2 = FXMLLoader.load(getClass().getResource("../ui/ui.fxml"));
+            Scene scene = new Scene(root2);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(scene);
+            app_stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+
     /* Todo App Section */
     @FXML
     public void onButtonClick(ActionEvent event) {

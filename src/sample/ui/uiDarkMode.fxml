@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane style="-fx-background-color: linear-gradient(to right bottom, #1bbcde, #54bddf, #74bfdf, #8cc0dd, #a0c2da, #96c0d8, #8bbfd4, #81bdd0, #50b8bf, #26b09f, #2ea672, #4e993e);;" stylesheets="@../css/StyleDesign.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Controller">
+<BorderPane style="-fx-background-color: linear-gradient(to left bottom, #313336, #292a2d, #222224, #1a1a1b, #121112, #0f0e0f, #0b090b, #060506, #09090b, #0c0e0f, #0f1112, #111414);;" stylesheets="@../css/StyleDesign.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Controller">
    <top>
       <HBox style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
          <children>
@@ -30,11 +30,11 @@
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </padding>
             </HBox>
-            <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_LEFT" style="-fx-background-color: linear-gradient(to left bottom, #313336, #292a2d, #222224, #1a1a1b, #121112, #0f0e0f, #0b090b, #060506, #09090b, #0c0e0f, #0f1112, #111414);;" HBox.hgrow="ALWAYS">
                <children>
                   <HBox alignment="CENTER">
                      <children>
-                        <TextField promptText="search" style="-fx-background-color: transparent; -fx-promt-text-fill: #485460;">
+                        <TextField promptText="search" style="-fx-background-color: white; -fx-promt-text-fill: #000000;">
                            <HBox.margin>
                               <Insets left="5.0" right="10.0" />
                            </HBox.margin>
@@ -44,7 +44,6 @@
                   </HBox>
                   <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefHeight="69.0" prefWidth="480.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <FontAwesomeIconView glyphName="COFFEE" size="1.3em" styleClass="cursor_hand" text="" />
                         <ImageView fitWidth="32.0" pickOnBounds="true" preserveRatio="true" styleClass="cursor_hand">
                            <image>
                               <Image url="@../images/hacker.png" />
@@ -53,7 +52,7 @@
                               <Insets left="20.0" right="20.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Qucksand; -fx-font-weight: bold;" text="Project UI">
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Qucksand; -fx-font-weight: bold;" text="Project UI">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
@@ -71,15 +70,15 @@
       </HBox>
    </top>
    <left>
-      <VBox maxWidth="-Infinity" prefHeight="578.0" prefWidth="149.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+      <VBox maxWidth="-Infinity" prefHeight="578.0" prefWidth="149.0" style="-fx-background-color: linear-gradient(to left bottom, #313336, #292a2d, #222224, #1a1a1b, #121112, #0f0e0f, #0b090b, #060506, #09090b, #0c0e0f, #0f1112, #111414);;" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER_LEFT" styleClass="hover_border">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="#f51f0563" glyphName="CIRCLE_ALT_NOTCH" size="1.5em" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #485460;" text="Dashboard">
+                  <FontAwesomeIconView fill="#ffffff63" glyphName="CIRCLE_ALT_NOTCH" size="1.5em" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #ffffff;" text="Dashboard">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -94,8 +93,8 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="#f51f0563" glyphName="CALENDAR_ALT" size="1.5em" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #485460;" text="Project">
+                  <FontAwesomeIconView fill="#ffffff63" glyphName="CALENDAR_ALT" size="1.5em" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #ffffff;" text="Project">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -110,8 +109,8 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="#f51f0563" glyphName="LIST_UL" size="1.5em" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #485460;" text="Task">
+                  <FontAwesomeIconView fill="#ffffff63" glyphName="LIST_UL" size="1.5em" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #ffffff;" text="Task">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -126,8 +125,8 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="#f51f0563" glyphName="ENVELOPE_ALT" size="1.5em" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #485460;" text="Messages">
+                  <FontAwesomeIconView fill="#ffffff63" glyphName="ENVELOPE_ALT" size="1.5em" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #ffffff;" text="Messages">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -142,8 +141,8 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="#f51f0563" glyphName="FILE_TEXT_ALT" size="1.5em" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #485460;" text="Reports">
+                  <FontAwesomeIconView fill="#ffffff63" glyphName="FILE_TEXT_ALT" size="1.5em" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #ffffff;" text="Reports">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -160,8 +159,8 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                      <children>
-                        <FontAwesomeIconView fill="#f51f0563" glyphName="COG" size="1.5em" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #485460;" text="Settings">
+                        <FontAwesomeIconView fill="#ffffff63" glyphName="COG" size="1.5em" />
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #ffffff;" text="Settings">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
@@ -173,8 +172,8 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                      <children>
-                        <FontAwesomeIconView fill="#f51f0563" glyphName="USER" size="1.5em" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #485460;" text="Contact Support">
+                        <FontAwesomeIconView fill="#ffffff63" glyphName="USER" size="1.5em" />
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #ffffff;" text="Contact Support">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
@@ -197,7 +196,7 @@
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </padding>
                <children>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-font-size: 1.3em; -fx-fill: white;" text="Project List" />
+                  <Text fill="#a82525" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-font-size: 1.3em; -fx-fill: white;" text="Project List" />
                   <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
                      <children>
                         <Button mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 0px;">
@@ -212,7 +211,7 @@
                         </Button>
                         <HBox alignment="CENTER">
                            <children>
-                              <TextField promptText="search" style="-fx-background-color: transparent; -fx-promt-text-fill: red; -fx-border-width: 0px 0px 1.5px 0px; -fx-border-color: linear-gradient(to left, #4aac36, #22af5d, #00b17d, #00b197, #00b0aa, #00adbb, #00a9ca, #00a4d4, #279ae0, #598de4, #877bdd, #af65c9);" text="search project">
+                              <TextField promptText="search" style="-fx-background-color: white; -fx-promt-text-fill: red; -fx-border-width: 0px 0px 1.5px 0px; -fx-border-color: linear-gradient(to left, #4aac36, #22af5d, #00b17d, #00b197, #00b0aa, #00adbb, #00a9ca, #00a4d4, #279ae0, #598de4, #877bdd, #af65c9);" text="search project">
                                  <HBox.margin>
                                     <Insets left="5.0" right="10.0" />
                                  </HBox.margin>
@@ -220,7 +219,7 @@
                               <FontAwesomeIconView fill="#1c5cad" glyphName="SEARCH" size="1.5em" styleClass="cursor_hand" />
                            </children>
                         </HBox>
-                        <Button mnemonicParsing="false" onAction="#lightModeMain" prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: #0fbcf9; -fx-background-radius: 0px; -fx-font-family: Quicksand; -fx-font-weight: bold; -fx-text-fill: white;" styleClass="cursor_hand" text="Dark Mode">
+                        <Button mnemonicParsing="false" onAction="#lightModeSwitchMain" prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: #0fbcf9; -fx-background-radius: 0px; -fx-font-family: Quicksand; -fx-font-weight: bold; -fx-text-fill: white;" styleClass="cursor_hand" text="Light Mode">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -234,7 +233,7 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: linear-gradient(to top, #30cee5, #00bff5, #00acff, #0095ff, #5e77ff, #746cfa, #885ff3, #9a4fea, #7e61ee, #626eed, #4878e9, #337fe1);;" styleClass="hover_fade" HBox.hgrow="ALWAYS">
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: linear-gradient(to left bottom, #5ab78e, #00b1b0, #00a7d0, #0e96df, #7e7ed3, #af70c0, #cf64a1, #de607d, #e87066, #e68652, #da9e47, #c6b54a);;" styleClass="hover_fade" HBox.hgrow="ALWAYS">
                      <children>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                            <children>
@@ -320,7 +319,7 @@
                         <DropShadow color="#bbbbbb" height="10.0" radius="4.5" width="10.0" />
                      </effect>
                   </VBox>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: linear-gradient(to top, #30cee5, #00bff5, #00acff, #0095ff, #5e77ff, #746cfa, #885ff3, #9a4fea, #7e61ee, #626eed, #4878e9, #337fe1);;" styleClass="hover_fade">
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: linear-gradient(to left bottom, #5ab78e, #00b1b0, #00a7d0, #0e96df, #7e7ed3, #af70c0, #cf64a1, #de607d, #e87066, #e68652, #da9e47, #c6b54a);;" styleClass="hover_fade">
                      <children>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                            <children>
@@ -406,7 +405,7 @@
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </HBox.margin>
                   </VBox>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: linear-gradient(to top, #30cee5, #00bff5, #00acff, #0095ff, #5e77ff, #746cfa, #885ff3, #9a4fea, #7e61ee, #626eed, #4878e9, #337fe1);;" styleClass="hover_fade">
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: linear-gradient(to left bottom, #5ab78e, #00b1b0, #00a7d0, #0e96df, #7e7ed3, #af70c0, #cf64a1, #de607d, #e87066, #e68652, #da9e47, #c6b54a);;" styleClass="hover_fade">
                      <children>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                            <children>
@@ -496,7 +495,7 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: linear-gradient(to top, #30cee5, #00bff5, #00acff, #0095ff, #5e77ff, #746cfa, #885ff3, #9a4fea, #7e61ee, #626eed, #4878e9, #337fe1);;" styleClass="hover_fade" HBox.hgrow="ALWAYS">
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: linear-gradient(to left bottom, #5ab78e, #00b1b0, #00a7d0, #0e96df, #7e7ed3, #af70c0, #cf64a1, #de607d, #e87066, #e68652, #da9e47, #c6b54a);;" styleClass="hover_fade" HBox.hgrow="ALWAYS">
                      <children>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                            <children>
@@ -574,7 +573,7 @@
                         <DropShadow color="#bbbbbb" height="10.0" radius="4.5" width="10.0" />
                      </effect>
                   </VBox>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: linear-gradient(to top, #30cee5, #00bff5, #00acff, #0095ff, #5e77ff, #746cfa, #885ff3, #9a4fea, #7e61ee, #626eed, #4878e9, #337fe1);;" styleClass="hover_fade">
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: linear-gradient(to left bottom, #5ab78e, #00b1b0, #00a7d0, #0e96df, #7e7ed3, #af70c0, #cf64a1, #de607d, #e87066, #e68652, #da9e47, #c6b54a);;" styleClass="hover_fade">
                      <children>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                            <children>
@@ -660,7 +659,7 @@
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </HBox.margin>
                   </VBox>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: linear-gradient(to top, #30cee5, #00bff5, #00acff, #0095ff, #5e77ff, #746cfa, #885ff3, #9a4fea, #7e61ee, #626eed, #4878e9, #337fe1);;" styleClass="hover_fade">
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: linear-gradient(to left bottom, #5ab78e, #00b1b0, #00a7d0, #0e96df, #7e7ed3, #af70c0, #cf64a1, #de607d, #e87066, #e68652, #da9e47, #c6b54a);;" styleClass="hover_fade">
                      <children>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                            <children>
