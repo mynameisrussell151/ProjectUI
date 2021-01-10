@@ -44,7 +44,6 @@
                   </HBox>
                   <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefHeight="69.0" prefWidth="480.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <FontAwesomeIconView glyphName="COFFEE" size="1.3em" styleClass="cursor_hand" text="" />
                         <ImageView fitWidth="32.0" pickOnBounds="true" preserveRatio="true" styleClass="cursor_hand">
                            <image>
                               <Image url="@../images/hacker.png" />

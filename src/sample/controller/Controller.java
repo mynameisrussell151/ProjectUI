@@ -386,7 +386,7 @@ public class Controller {
 
 
                 //        Establish HTTP Connection
-                PostRequest postRequest = new PostRequest("http://d1fb2ed90ffc.ngrok.io/api/auth/login", x);
+                PostRequest postRequest = new PostRequest("https://todo-projectx.loca.lt/api/auth/login", x);
                 postRequest.executePostRequest();
                 String response = postRequest.getPostRequestResponse();
                 int responseCode = postRequest.getmHttpURLConnection().getResponseCode();

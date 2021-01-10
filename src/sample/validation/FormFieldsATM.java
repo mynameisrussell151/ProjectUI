@@ -1,6 +1,7 @@
 package sample.validation;
 
 public class FormFieldsATM {
+    private float balance;
     private String name;
     private String username;
     private String address;
@@ -17,6 +18,7 @@ public class FormFieldsATM {
         this.emailAddress = emailAddress;
         this.password = password;
         this.password2 = password2;
+        this.balance = 0;
     }
 
     public FormFieldsATM(String username, String password) {
