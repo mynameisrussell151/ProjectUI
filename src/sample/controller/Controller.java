@@ -750,7 +750,7 @@ public class Controller {
         try {
             Parent root1 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/jackenpoyUI.fxml"));
             Stage stage = new Stage();
-            Image image = new Image(getClass().getResourceAsStream("../images/atm.png"));
+            Image image = new Image(getClass().getResourceAsStream("../images/power1.png"));
             stage.getIcons().add(image);
             stage.setTitle("Jack En Poy");
             stage.setScene(new Scene(root1, 900, 690));

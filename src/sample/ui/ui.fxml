@@ -587,7 +587,7 @@
                         </HBox>
                         <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/tic-tac-toe.png" />
+                              <Image url="@../images/power1.png" />
                            </image>
                            <VBox.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
