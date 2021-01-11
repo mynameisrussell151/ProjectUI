@@ -743,6 +743,39 @@ public class Controller {
         }
     }
 
+    // Jack en Poy Section
+
+    @FXML
+    public void onButtonClickJNP(ActionEvent event) {
+        try {
+            Parent root1 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/jackenpoyUI.fxml"));
+            Stage stage = new Stage();
+            Image image = new Image(getClass().getResourceAsStream("../images/atm.png"));
+            stage.getIcons().add(image);
+            stage.setTitle("Jack En Poy");
+            stage.setScene(new Scene(root1, 900, 690));
+            stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    void onButtonClickJNPGame(ActionEvent event){
+        try {
+            Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/jackenpoyGameUI.fxml"));
+            Scene scene = new Scene(root2);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(scene);
+            app_stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+
+
 
     // Loading Effects Initialization
 //    @FXML
