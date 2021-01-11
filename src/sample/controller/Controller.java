@@ -128,6 +128,9 @@ public class Controller {
     @FXML
     private Label computerScore;
 
+    @FXML
+    private Label round;
+
 
 
     //Main UI
@@ -798,15 +801,7 @@ public class Controller {
 
     }
 
-    @FXML
-   public void onButtonClickRock(ActionEvent event) {
 
-    }
-
-    @FXML
-   public void onButtonClickScissor(ActionEvent event) {
-
-    }
 
     public void playerChoice(ActionEvent event){
         String playerChoice = "";
@@ -826,6 +821,8 @@ public class Controller {
         }
         player.setImage(image);
         winner(playerChoice,computerChoice());
+        roundStart();
+
     }
     public String computerChoice() {
         String computerChoice = null;
@@ -864,6 +861,10 @@ public class Controller {
     public void winPlayer(){
         result.setText("Player Wins!");
         playerScore.setText(String.valueOf(Integer.parseInt(playerScore.getText())+1));
+    }
+
+    public void roundStart(){
+        round.setText(String.valueOf(Integer.parseInt(round.getText())+1));
     }
 
 
@@ -905,6 +906,7 @@ public class Controller {
                 winComputer();
             }
         }
+
     }
 
 
