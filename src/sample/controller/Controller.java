@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
@@ -28,6 +29,12 @@ import java.util.ResourceBundle;
 
 
 public class Controller {
+    //Final initialization for Jack en Poy
+    private static final String PAPER = "paper";
+    private static final String ROCK = "rock";
+    private static final String SCISSOR = "scissor";
+    private Image image;
+
 
 
     // To-do App
@@ -104,6 +111,23 @@ public class Controller {
 
     @FXML
     private Label emailAddBankLabelLogin;
+
+    //Jack en Poy
+    @FXML
+    private ImageView player;
+
+    @FXML
+    private Label result;
+
+    @FXML
+    private ImageView computer;
+
+    @FXML
+    private Label playerScore;
+
+    @FXML
+    private Label computerScore;
+
 
 
     //Main UI
@@ -761,7 +785,7 @@ public class Controller {
     }
 
     @FXML
-    void onButtonClickJNPGame(ActionEvent event){
+    public void onButtonClickJNPGame(ActionEvent event){
         try {
             Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/jackenpoyGameUI.fxml"));
             Scene scene = new Scene(root2);
@@ -773,6 +797,118 @@ public class Controller {
         }
 
     }
+
+    @FXML
+   public void onButtonClickRock(ActionEvent event) {
+
+    }
+
+    @FXML
+   public void onButtonClickScissor(ActionEvent event) {
+
+    }
+
+    public void playerChoice(ActionEvent event){
+        String playerChoice = "";
+        switch (((Button) event.getSource()).getId()) {
+            case "onButtonClickRock" -> {
+                image = new Image(getClass().getResourceAsStream("../images/empowerment.png"));
+                playerChoice = ROCK;
+            }
+            case "onButtonClickPaper" -> {
+                image = new Image(getClass().getResourceAsStream("../images/open-hand.png"));
+                playerChoice = PAPER;
+            }
+            case "onButtonClickScissor" -> {
+                image = new Image(getClass().getResourceAsStream("../images/peace.png"));
+                playerChoice = SCISSOR;
+            }
+        }
+        player.setImage(image);
+        winner(playerChoice,computerChoice());
+    }
+    public String computerChoice() {
+        String computerChoice = null;
+        int i = (int) (Math.random() * 3);
+
+        switch (i){
+            case 0:
+                image = new Image(getClass().getResourceAsStream("../images/empowerment.png"));
+                computerChoice = ROCK;
+                break;
+
+            case 1:
+                image = new Image(getClass().getResourceAsStream("../images/open-hand.png"));
+                computerChoice = PAPER;
+                break;
+
+
+            case 2:
+                image = new Image(getClass().getResourceAsStream("../images/peace.png"));
+                computerChoice = SCISSOR;
+                break;
+        }
+        computer.setImage(image);
+        return computerChoice;
+    }
+
+    public void draw(){
+        result.setText("Draw");
+    }
+
+    public void winComputer(){
+        result.setText("Computer Wins!");
+        computerScore.setText(String.valueOf(Integer.parseInt(computerScore.getText())+1));
+    }
+
+    public void winPlayer(){
+        result.setText("Player Wins!");
+        playerScore.setText(String.valueOf(Integer.parseInt(playerScore.getText())+1));
+    }
+
+
+
+
+    public void winner(String playerChoice, String computerChoice) {
+
+        if (playerChoice.equals(ROCK)) {
+            if (computerChoice.equals(PAPER)) {
+                winComputer();
+            }
+            else if (computerChoice.equals(ROCK)){
+                draw();
+            }
+
+            else {
+                winPlayer();
+            }
+        } else if (playerChoice.equals(PAPER)) {
+            if (computerChoice.equals(ROCK)) {
+                winPlayer();
+            }
+
+            else if (computerChoice.equals(PAPER)){
+                draw();
+            }
+
+            else {
+                winComputer();
+            }
+        } else {
+            if (computerChoice.equals(PAPER)) {
+                winPlayer();
+            }
+            else if (computerChoice.equals(SCISSOR)){
+                draw();
+            }
+            else {
+                winComputer();
+            }
+        }
+    }
+
+
+
 
 
 

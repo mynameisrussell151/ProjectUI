@@ -11,14 +11,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="874.0" stylesheets="@../../css/StyleDesignJNP.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@../../css/StyleDesignJNP.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Controller">
    <bottom>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="604.0" spacing="100.0" stylesheets="@../../css/StyleDesign.css" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="106.0" prefWidth="874.0" spacing="100.0" style="-fx-background-color: linear-gradient(to right, #a613da, #735af3, #387bfa, #0093f5, #32a5e7, #31a8ec, #31abf1, #30aef6, #11a1ff, #5e8cff, #a669ff, #e800ff);;" stylesheets="@../../css/StyleDesign.css" BorderPane.alignment="CENTER">
          <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" stylesheets="@../../css/StyleDesign.css">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="111.0" prefWidth="100.0" style="-fx-background-color: rgba(0,0,0,0);" styleClass="cursor_hand">
+                  <Button fx:id="onButtonClickRock" alignment="CENTER" mnemonicParsing="false" onAction="#playerChoice" prefHeight="111.0" prefWidth="100.0" style="-fx-background-color: rgba(0,0,0,0);" styleClass="cursor_hand">
                      <graphic>
                         <ImageView fitHeight="98.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -27,7 +26,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label text="Rock">
+                  <Label text="Rock" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI" size="14.0" />
                      </font>
@@ -36,7 +35,7 @@
             </VBox>
             <VBox alignment="CENTER" layoutX="390.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" stylesheets="@../../css/StyleDesign.css">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="111.0" prefWidth="100.0" style="-fx-background-color: rgba(0,0,0,0);" styleClass="cursor_hand">
+                  <Button fx:id="onButtonClickPaper" alignment="CENTER" mnemonicParsing="false" onAction="#playerChoice" prefHeight="111.0" prefWidth="100.0" style="-fx-background-color: rgba(0,0,0,0);" styleClass="cursor_hand">
                      <graphic>
                         <ImageView fitHeight="98.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -45,7 +44,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label text="Paper">
+                  <Label text="Paper" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI" size="14.0" />
                      </font>
@@ -54,7 +53,7 @@
             </VBox>
             <VBox alignment="CENTER" layoutX="333.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" stylesheets="@../../css/StyleDesign.css">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="111.0" prefWidth="100.0" style="-fx-background-color: rgba(0,0,0,0);" styleClass="cursor_hand">
+                  <Button fx:id="onButtonClickScissor" alignment="CENTER" mnemonicParsing="false" onAction="#playerChoice" prefHeight="111.0" prefWidth="100.0" style="-fx-background-color: rgba(0,0,0,0);" styleClass="cursor_hand">
                      <graphic>
                         <ImageView fitHeight="98.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -63,7 +62,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label text="Scissor">
+                  <Label text="Scissor" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI" size="14.0" />
                      </font>
@@ -74,9 +73,9 @@
       </HBox>
    </bottom>
    <left>
-      <VBox alignment="CENTER" prefHeight="428.0" prefWidth="201.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="428.0" prefWidth="201.0" style="-fx-background-color: linear-gradient(to left top, #a613da, #735af3, #387bfa, #0093f5, #32a5e7, #31a8ec, #31abf1, #30aef6, #11a1ff, #5e8cff, #a669ff, #e800ff);;" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Player">
+            <Label text="Player" textFill="WHITE">
                <font>
                   <Font name="Segoe UI" size="30.0" />
                </font>
@@ -87,7 +86,7 @@
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </padding>
             </Label>
-            <Label layoutX="46.0" layoutY="199.0" text="0">
+            <Label fx:id="playerScore" layoutX="46.0" layoutY="199.0" text="0" textFill="WHITE">
                <font>
                   <Font name="Segoe UI" size="30.0" />
                </font>
@@ -106,7 +105,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </Separator>
-            <Label layoutX="46.0" layoutY="208.0" prefHeight="58.0" prefWidth="173.0" text="Computer">
+            <Label layoutX="46.0" layoutY="208.0" prefHeight="58.0" prefWidth="173.0" text="Computer" textFill="WHITE">
                <font>
                   <Font name="Segoe UI" size="30.0" />
                </font>
@@ -117,7 +116,7 @@
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </padding>
             </Label>
-            <Label layoutX="46.0" layoutY="216.0" text="0">
+            <Label fx:id="computerScore" layoutX="46.0" layoutY="216.0" text="0" textFill="WHITE">
                <font>
                   <Font name="Segoe UI" size="30.0" />
                </font>
@@ -134,8 +133,8 @@
    <center>
       <HBox alignment="CENTER" styleClass="background-image" stylesheets="@../../css/StyleDesignJNP.css" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-            <Label alignment="CENTER" text="Result">
+            <ImageView fx:id="player" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="result" alignment="CENTER">
                <font>
                   <Font name="Segoe UI" size="52.0" />
                </font>
@@ -146,7 +145,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
             </Label>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="computer" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
    </center>
