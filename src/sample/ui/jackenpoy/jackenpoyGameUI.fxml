@@ -157,7 +157,7 @@
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label fx:id="round" layoutX="16.0" layoutY="213.0" text="0" textFill="WHITE">
+            <Label fx:id="round" layoutX="16.0" layoutY="213.0" text="1" textFill="WHITE">
                <font>
                   <Font size="30.0" />
                </font>
