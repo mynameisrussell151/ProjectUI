@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="874.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="874.0" stylesheets="@../../css/StyleDesignJNP.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="604.0" spacing="100.0" stylesheets="@../../css/StyleDesign.css" BorderPane.alignment="CENTER">
          <children>
@@ -132,7 +132,7 @@
       </VBox>
    </left>
    <center>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" styleClass="background-image" stylesheets="@../../css/StyleDesignJNP.css" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
             <Label alignment="CENTER" text="Result">
