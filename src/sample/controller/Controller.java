@@ -801,6 +801,20 @@ public class Controller {
 
     }
 
+    @FXML
+    public void onButtonClickJNPSettings(ActionEvent event){
+        try {
+            Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/jackenpoyGameUI.fxml"));
+            Scene scene = new Scene(root2);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(scene);
+            app_stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
 
 
     public void playerChoice(ActionEvent event){
