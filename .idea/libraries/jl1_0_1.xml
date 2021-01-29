@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="jl1.0.1">
+    <CLASSES>
+      <root url="jar://H:/Java Lib/jl1.0.1.jar!/" />
+      <root url="jar://H:/Java Lib/jsminim.jar!/" />
+      <root url="jar://H:/Java Lib/minim.jar!/" />
+      <root url="jar://H:/Java Lib/mp3spi1.9.5.jar!/" />
+      <root url="jar://H:/Java Lib/tritonus_aos.jar!/" />
+      <root url="jar://H:/Java Lib/tritonus_share.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://H:/Java Lib/jl1.0.1.jar!/" />
+    </SOURCES>
+  </library>
+</component>
