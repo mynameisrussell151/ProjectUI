@@ -1,8 +1,8 @@
 package sample.controller;
 
 
-import animatefx.animation.Bounce;
 import com.google.gson.Gson;
+import ddf.minim.*;
 import http_request.PostRequest;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,28 +13,23 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
-import javafx.fxml.Initializable;
-import javafx.util.Duration;
 import sample.validation.*;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.net.URISyntaxException;
+import java.util.Random;
 
 
 public class Controller {
     //Final initialization for Jack en Poy
+    private static int aJNP = 0;
     private static final String PAPER = "paper";
     private static final String ROCK = "rock";
     private static final String SCISSOR = "scissor";
     private Image image;
-
+    private static AudioPlayer song;
+    private static Minim loader;
 
 
     // To-do App
@@ -131,6 +126,8 @@ public class Controller {
     @FXML
     private Label round;
 
+    @FXML
+    private Label soundLabel;
 
 
     //Main UI
@@ -161,7 +158,6 @@ public class Controller {
             System.out.println(e.getMessage());
         }
     }
-
 
 
     /* Todo App Section */
@@ -773,7 +769,7 @@ public class Controller {
     // Jack en Poy Section
 
     @FXML
-    public void onButtonClickJNP(ActionEvent event) {
+    public void onButtonClickJNP(ActionEvent event) throws URISyntaxException {
         try {
             Parent root1 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/jackenpoyUI.fxml"));
             Stage stage = new Stage();
@@ -782,13 +778,14 @@ public class Controller {
             stage.setTitle("Jack En Poy");
             stage.setScene(new Scene(root1, 900, 690));
             stage.show();
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
     @FXML
-    public void onButtonClickJNPGame(ActionEvent event){
+    public void onButtonClickJNPGame(ActionEvent event) {
         try {
             Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/jackenpoyGameUI.fxml"));
             Scene scene = new Scene(root2);
@@ -802,9 +799,9 @@ public class Controller {
     }
 
     @FXML
-    public void onButtonClickJNPSettings(ActionEvent event){
+    public void onButtonClickJNPGameOne(ActionEvent event) {
         try {
-            Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/jackenpoyGameUI.fxml"));
+            Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/Themes/Theme1/jackenpoyGameUI.fxml"));
             Scene scene = new Scene(root2);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             app_stage.setScene(scene);
@@ -815,9 +812,264 @@ public class Controller {
 
     }
 
+    @FXML
+    public void onButtonClickJNPGameTwo(ActionEvent event) {
+        try {
+            Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/Themes/Theme2/jackenpoyGameUI.fxml"));
+            Scene scene = new Scene(root2);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(scene);
+            app_stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    @FXML
+    public void onButtonClickJNPGameThree(ActionEvent event) {
+        try {
+            Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/Themes/Theme3/jackenpoyGameUI.fxml"));
+            Scene scene = new Scene(root2);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(scene);
+            app_stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    @FXML
+    public void onButtonClickJNPSettings(ActionEvent event) {
+        try {
+            Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/jackenpoySettings.fxml"));
+            Scene scene = new Scene(root2);
+
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(scene);
+            app_stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    @FXML
+    public void onButtonClickJNPSettingsOne(ActionEvent event) {
+        try {
+            Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/Themes/Theme1/jackenpoySettings.fxml"));
+            Scene scene = new Scene(root2);
+
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(scene);
+            app_stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    @FXML
+    public void onButtonClickJNPSettingsTwo(ActionEvent event) {
+        try {
+            Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/Themes/Theme2/jackenpoySettings.fxml"));
+            Scene scene = new Scene(root2);
+
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(scene);
+            app_stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    @FXML
+    public void onButtonClickJNPSettingsThree(ActionEvent event) {
+        try {
+            Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/Themes/Theme3/jackenpoySettings.fxml"));
+            Scene scene = new Scene(root2);
+
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(scene);
+            app_stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    @FXML
+    public void onButtonClickJNPBack(ActionEvent event) {
+        try {
+            Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/jackenpoyUI.fxml"));
+            Scene scene = new Scene(root2);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(scene);
+            app_stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    public void onButtonClickJNPBackOne(ActionEvent event) {
+        try {
+            Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/Themes/Theme1/jackenpoyUI.fxml"));
+            Scene scene = new Scene(root2);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(scene);
+            app_stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    public void onButtonClickJNPBackTwo(ActionEvent event) {
+        try {
+            Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/Themes/Theme2/jackenpoyUI.fxml"));
+            Scene scene = new Scene(root2);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(scene);
+            app_stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    public void onButtonClickJNPBackThree(ActionEvent event) {
+        try {
+            Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/Themes/Theme3/jackenpoyUI.fxml"));
+            Scene scene = new Scene(root2);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(scene);
+            app_stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
 
-    public void playerChoice(ActionEvent event){
+    @FXML
+    public void onButtonClickJNPSound(ActionEvent event) {
+        backgroundMusic();
+        soundLabel.setText("On");
+    }
+
+    public void backgroundMusic() {
+//        String musicFile = "muriel.wav";     // For example
+//        Media sound = new Media(new File(musicFile).toURI().toString());
+//        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+//        mediaPlayer.play();
+    }
+
+    public void themes(ActionEvent event) {
+        boolean isTrue = true;
+        int range = aJNP += 1;
+        while (isTrue) {
+            isTrue = false;
+
+            switch (range) {
+                case 1 -> {
+                    try {
+                        Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/Themes/Theme1/jackenpoySettings.fxml"));
+                        Scene scene = new Scene(root2);
+                        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        app_stage.setScene(scene);
+                        app_stage.show();
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    try {
+                        Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/Themes/Theme1/jackenpoyUI.fxml"));
+                        Scene scene = new Scene(root2);
+                        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        app_stage.setScene(scene);
+                        app_stage.show();
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    try {
+                        Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/Themes/Theme1/jackenpoyGameUI.fxml"));
+                        Scene scene = new Scene(root2);
+                        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        app_stage.setScene(scene);
+                        app_stage.show();
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
+                case 2 -> {
+                    try {
+                        Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/Themes/Theme2/jackenpoySettings.fxml"));
+                        Scene scene = new Scene(root2);
+                        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        app_stage.setScene(scene);
+                        app_stage.show();
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    try {
+                        Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/Themes/Theme2/jackenpoyUI.fxml"));
+                        Scene scene = new Scene(root2);
+                        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        app_stage.setScene(scene);
+                        app_stage.show();
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    try {
+                        Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/Themes/Theme2/jackenpoyGameUI.fxml"));
+                        Scene scene = new Scene(root2);
+                        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        app_stage.setScene(scene);
+                        app_stage.show();
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
+                case 3 -> {
+                    try {
+                        Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/Themes/Theme3/jackenpoySettings.fxml"));
+                        Scene scene = new Scene(root2);
+                        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        app_stage.setScene(scene);
+                        app_stage.show();
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    try {
+                        Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/Themes/Theme3/jackenpoyUI.fxml"));
+                        Scene scene = new Scene(root2);
+                        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        app_stage.setScene(scene);
+                        app_stage.show();
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    try {
+                        Parent root2 = FXMLLoader.load(getClass().getResource("../ui/jackenpoy/Themes/Theme3/jackenpoyGameUI.fxml"));
+                        Scene scene = new Scene(root2);
+                        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        app_stage.setScene(scene);
+                        app_stage.show();
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
+            }
+            if (aJNP == 3) {
+                aJNP = 0;
+            }
+        }
+
+    }
+
+
+    public void playerChoice(ActionEvent event) {
         String playerChoice = "";
         switch (((Button) event.getSource()).getId()) {
             case "onButtonClickRock" -> {
@@ -834,15 +1086,16 @@ public class Controller {
             }
         }
         player.setImage(image);
-        winner(playerChoice,computerChoice());
+        winner(playerChoice, computerChoice());
         roundStart();
 
     }
+
     public String computerChoice() {
         String computerChoice = null;
         int i = (int) (Math.random() * 3);
 
-        switch (i){
+        switch (i) {
             case 0:
                 image = new Image(getClass().getResourceAsStream("../images/empowerment.png"));
                 computerChoice = ROCK;
@@ -863,22 +1116,26 @@ public class Controller {
         return computerChoice;
     }
 
-    public void draw(){
+    public void draw() {
         result.setText("Draw");
     }
 
-    public void winComputer(){
+    public void winComputer() {
         result.setText("Computer Wins!");
-        computerScore.setText(String.valueOf(Integer.parseInt(computerScore.getText())+1));
+        computerScore.setText(String.valueOf(Integer.parseInt(computerScore.getText()) + 1));
     }
 
-    public void winPlayer(){
+    public void winPlayer() {
         result.setText("Player Wins!");
-        playerScore.setText(String.valueOf(Integer.parseInt(playerScore.getText())+1));
+        playerScore.setText(String.valueOf(Integer.parseInt(playerScore.getText()) + 1));
     }
 
-    public void roundStart(){
-        round.setText(String.valueOf(Integer.parseInt(round.getText())+1));
+    public void roundStart() {
+        round.setText(String.valueOf(Integer.parseInt(round.getText()) + 1));
+    }
+
+    public void numberOfRounds() {
+
     }
 
 
@@ -887,45 +1144,32 @@ public class Controller {
         if (playerChoice.equals(ROCK)) {
             if (computerChoice.equals(PAPER)) {
                 winComputer();
-            }
-            else if (computerChoice.equals(ROCK)){
+            } else if (computerChoice.equals(ROCK)) {
                 draw();
-            }
-
-            else {
+            } else {
                 winPlayer();
             }
         } else if (playerChoice.equals(PAPER)) {
             if (computerChoice.equals(ROCK)) {
                 winPlayer();
-            }
-
-            else if (computerChoice.equals(PAPER)){
+            } else if (computerChoice.equals(PAPER)) {
                 draw();
-            }
-
-            else {
+            } else {
                 winComputer();
             }
         } else {
             if (computerChoice.equals(PAPER)) {
                 winPlayer();
-            }
-            else if (computerChoice.equals(SCISSOR)){
+            } else if (computerChoice.equals(SCISSOR)) {
                 draw();
-            }
-            else {
+            } else {
                 winComputer();
             }
         }
 
     }
 
-
-
-
-
-
+//
 
     // Loading Effects Initialization
 //    @FXML

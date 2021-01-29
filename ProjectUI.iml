@@ -15,5 +15,7 @@
     <orderEntry type="library" name="CRUDPraktis" level="project" />
     <orderEntry type="library" name="demo" level="project" />
     <orderEntry type="library" name="com.jfoenix:jfoenix:9.0.10" level="project" />
+    <orderEntry type="library" name="jl1.0.1" level="project" />
+    <orderEntry type="library" name="minim" level="project" />
   </component>
 </module>

@@ -1,35 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="471.0" prefWidth="700.0" style="-fx-background-color: linear-gradient(to left top, #3fbdc9, #00afd5, #009de1, #0089e5, #456fdd, #9759cb, #c83aa7, #e21578, #ef443f, #db7800, #aea300, #64c430);;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Controller">
    <children>
-      <VBox alignment="CENTER" layoutX="149.0" layoutY="244.0" prefHeight="143.0" prefWidth="423.0" spacing="50.0" AnchorPane.bottomAnchor="84.0" AnchorPane.leftAnchor="149.0" AnchorPane.rightAnchor="128.0" AnchorPane.topAnchor="244.0">
-         <children>
-            <Button mnemonicParsing="false" onAction="#onButtonClickJNPGame" prefHeight="75.0" prefWidth="246.0" style="-fx-background-color: linear-gradient(to bottom, #13c9da, #379cc1, #4e7197, #4b4a65, #352a36, #3a2232, #3f1929, #420f1d, #710826, #a20027, #d2001f, #ff0000);;" styleClass="cursor_hand" stylesheets="@../../css/StyleDesign.css" text="Play" textFill="WHITE">
-               <font>
-                  <Font name="Segoe UI" size="42.0" />
-               </font>
-            </Button>
-            <Button layoutX="99.0" layoutY="42.0" mnemonicParsing="false" onAction="#onButtonClickJNPSettings" prefHeight="75.0" prefWidth="246.0" style="-fx-background-color: linear-gradient(to bottom, #13c9da, #379cc1, #4e7197, #4b4a65, #352a36, #3a2232, #3f1929, #420f1d, #710826, #a20027, #d2001f, #ff0000);;" styleClass="cursor_hand" stylesheets="@../../css/StyleDesign.css" text="Settings" textFill="WHITE">
-               <font>
-                  <Font name="Segoe UI" size="42.0" />
-               </font>
-            </Button>
-         </children>
-      </VBox>
-      <VBox alignment="CENTER" layoutX="149.0" layoutY="14.0" prefHeight="143.0" prefWidth="423.0" AnchorPane.bottomAnchor="314.0" AnchorPane.leftAnchor="149.0" AnchorPane.rightAnchor="128.0" AnchorPane.topAnchor="14.0">
-         <children>
-            <Label text="Jack en Poy" textFill="WHITE" VBox.vgrow="ALWAYS">
-               <font>
-                  <Font size="68.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
+      <BorderPane prefHeight="471.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#themes" prefHeight="105.0" prefWidth="367.0" style="-fx-background-color: linear-gradient(to right top, #cb59e3, #b264e6, #996ce7, #7f72e4, #6776df, #5373d1, #426fc2, #346bb2, #2b6098, #28547f, #274867, #273c4f);;" styleClass="cursor_hand" stylesheets="@../../css/StyleDesign.css" text="Change Theme" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="42.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button layoutX="178.0" layoutY="210.0" mnemonicParsing="false" onAction="#onButtonClickJNPBack" prefHeight="97.0" prefWidth="365.0" style="-fx-background-color: linear-gradient(to right top, #cb59e3, #b264e6, #996ce7, #7f72e4, #6776df, #5373d1, #426fc2, #346bb2, #2b6098, #28547f, #274867, #273c4f);;" styleClass="cursor_hand" stylesheets="@../../css/StyleDesign.css" text="Back" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="42.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
    </children>
 </AnchorPane>

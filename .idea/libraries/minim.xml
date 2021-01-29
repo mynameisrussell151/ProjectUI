@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="minim">
+    <CLASSES>
+      <root url="jar://H:/Java Lib/minim.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://H:/Java Lib/minim.jar!/" />
+      <root url="jar://H:/Java Lib/minim.jar!/" />
+    </SOURCES>
+  </library>
+</component>
