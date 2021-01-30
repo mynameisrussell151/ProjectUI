@@ -659,7 +659,7 @@ public class Controller {
 
 
 //        Establish HTTP Connection
-                PostRequest postRequest = new PostRequest("http://localhost:8080/saveATMUser", x);
+                PostRequest postRequest = new PostRequest("http://localhost:8080/api/ATM/saveATMUser", x);
                 postRequest.executePostRequest();
                 String response = postRequest.getPostRequestResponse();
                 int responseCode = postRequest.getmHttpURLConnection().getResponseCode();
@@ -720,8 +720,9 @@ public class Controller {
             String x = gson.toJson(formFields);
 
 
+
             //        Establish HTTP Connection
-            PostRequest postRequest = new PostRequest("http://localhost:8080/getATMUser", x);
+            PostRequest postRequest = new PostRequest("http://localhost:8080/api/ATM/getATMUser", x);
             postRequest.executePostRequest();
             String response = postRequest.getPostRequestResponse();
             int responseCode = postRequest.getmHttpURLConnection().getResponseCode();
@@ -971,7 +972,6 @@ public class Controller {
         int range = aJNP += 1;
         while (isTrue) {
             isTrue = false;
-
             switch (range) {
                 case 1 -> {
                     try {
